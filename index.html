@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>蓮香麵店｜明日進貨助手</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Noto Sans TC",
+                "Microsoft JhengHei",
+                sans-serif;
+
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 24px 18px 40px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .header .icon {
+            font-size: 54px;
+            margin-bottom: 8px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #333;
+        }
+
+        .header p {
+            margin: 8px 0 0;
+            font-size: 16px;
+            color: #777;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .record-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .record-date {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .record-list {
+            margin-top: 20px;
+        }
+
+        .record-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+
+            font-size: 18px;
+        }
+
+        .record-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            font-weight: 500;
+        }
+
+        .item-quantity {
+            font-weight: bold;
+        }
+
+        .record-empty {
+            text-align: center;
+            color: #999;
+            padding: 20px 0;
+        }
+
+        .main-button {
+            width: 100%;
+            border: none;
+            border-radius: 18px;
+
+            padding: 22px 15px;
+
+            font-size: 22px;
+            font-weight: bold;
+
+            color: white;
+            background: #d9534f;
+
+            cursor: pointer;
+        }
+
+        .main-button:active {
+            transform: scale(0.98);
+        }
+
+        .history-button {
+            width: 100%;
+            border: none;
+            border-radius: 15px;
+
+            padding: 17px;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            color: #444;
+            background: #eeeeee;
+
+            cursor: pointer;
+        }
+
+        .info {
+            text-align: center;
+            color: #999;
+            font-size: 13px;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <div class="icon">🍜</div>
+
+            <h1>蓮香麵店</h1>
+
+            <p>明日進貨助手</p>
+        </div>
+
+
+        <div class="card">
+
+            <div class="record-title">
+                今日進貨內容
+            </div>
+
+            <div class="record-date">
+                尚未建立進貨紀錄
+            </div>
+
+            <div class="record-list">
+
+                <div class="record-empty">
+                    按下下面的按鈕開始記錄
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <button class="main-button" onclick="startRecording()">
+                🎙️ 開始說話
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <button class="history-button" onclick="showHistory()">
+                📋 查看過去紀錄
+            </button>
+
+        </div>
+
+
+        <div class="info">
+            蓮香麵店進貨助手 v0.1
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function startRecording() {
+
+            alert("語音功能正在準備中！");
+
+        }
+
+
+        function showHistory() {
+
+            alert("歷史紀錄功能正在準備中！");
+
+        }
+
+    </script>
+
+</body>
+</html>
