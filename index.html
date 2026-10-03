@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>蓮香麵店｜明日進貨助手</title>
 
+
     <style>
+
         * {
             box-sizing: border-box;
         }
 
+
         body {
+
             margin: 0;
+
             font-family:
                 -apple-system,
                 BlinkMacSystemFont,
@@ -21,210 +32,555 @@
                 sans-serif;
 
             background: #f5f5f5;
+
             color: #333;
         }
 
+
         .container {
+
             width: 100%;
+
             max-width: 500px;
+
             margin: 0 auto;
+
             padding: 24px 18px 40px;
         }
 
+
         .header {
+
             text-align: center;
+
             margin-bottom: 28px;
         }
 
+
         .header .icon {
+
             font-size: 54px;
+
             margin-bottom: 8px;
         }
 
+
         .header h1 {
+
             margin: 0;
+
             font-size: 28px;
+
             color: #333;
         }
 
+
         .header p {
+
             margin: 8px 0 0;
+
             font-size: 16px;
+
             color: #777;
         }
 
+
         .card {
+
             background: white;
+
             border-radius: 20px;
+
             padding: 24px;
+
             margin-bottom: 18px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.08);
         }
 
+
         .record-title {
+
             font-size: 20px;
+
             font-weight: bold;
+
             margin-bottom: 8px;
         }
 
+
         .record-date {
+
             font-size: 14px;
+
             color: #888;
         }
 
-        .record-list {
-            margin-top: 20px;
-        }
-
-        .record-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
-
-            font-size: 18px;
-        }
-
-        .record-item:last-child {
-            border-bottom: none;
-        }
-
-        .item-name {
-            font-weight: 500;
-        }
-
-        .item-quantity {
-            font-weight: bold;
-        }
-
-        .record-empty {
-            text-align: center;
-            color: #999;
-            padding: 20px 0;
-        }
 
         .main-button {
+
             width: 100%;
+
             border: none;
+
             border-radius: 18px;
 
             padding: 22px 15px;
 
             font-size: 22px;
+
             font-weight: bold;
 
             color: white;
+
             background: #d9534f;
 
             cursor: pointer;
         }
 
+
+        .main-button.recording {
+
+            background: #333;
+        }
+
+
         .main-button:active {
+
             transform: scale(0.98);
         }
 
-        .history-button {
+
+        .status {
+
+            text-align: center;
+
+            font-size: 16px;
+
+            color: #777;
+
+            margin-top: 15px;
+
+            min-height: 24px;
+        }
+
+
+        .timer {
+
+            text-align: center;
+
+            font-size: 32px;
+
+            font-weight: bold;
+
+            margin-top: 12px;
+
+            color: #d9534f;
+
+            min-height: 40px;
+        }
+
+
+        .audio-box {
+
+            margin-top: 20px;
+
+            display: none;
+        }
+
+
+        .audio-box.show {
+
+            display: block;
+        }
+
+
+        audio {
+
             width: 100%;
+        }
+
+
+        .history-button {
+
+            width: 100%;
+
             border: none;
+
             border-radius: 15px;
 
             padding: 17px;
 
             font-size: 18px;
+
             font-weight: bold;
 
             color: #444;
+
             background: #eeeeee;
 
             cursor: pointer;
         }
 
+
         .info {
+
             text-align: center;
+
             color: #999;
+
             font-size: 13px;
+
             margin-top: 25px;
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <div class="container">
 
-        <div class="header">
-            <div class="icon">🍜</div>
+<div class="container">
 
-            <h1>蓮香麵店</h1>
 
-            <p>明日進貨助手</p>
+    <div class="header">
+
+        <div class="icon">
+            🍜
         </div>
 
+        <h1>
+            蓮香麵店
+        </h1>
 
-        <div class="card">
+        <p>
+            明日進貨助手
+        </p>
 
-            <div class="record-title">
-                今日進貨內容
-            </div>
+    </div>
 
-            <div class="record-date">
-                尚未建立進貨紀錄
-            </div>
 
-            <div class="record-list">
+    <div class="card">
 
-                <div class="record-empty">
-                    按下下面的按鈕開始記錄
-                </div>
-
-            </div>
-
+        <div class="record-title">
+            今日進貨內容
         </div>
 
-
-        <div class="card">
-
-            <button class="main-button" onclick="startRecording()">
-                🎙️ 開始說話
-            </button>
-
-        </div>
-
-
-        <div class="card">
-
-            <button class="history-button" onclick="showHistory()">
-                📋 查看過去紀錄
-            </button>
-
-        </div>
-
-
-        <div class="info">
-            蓮香麵店進貨助手 v0.1
+        <div class="record-date">
+            尚未建立進貨紀錄
         </div>
 
     </div>
 
 
-    <script>
-
-        function startRecording() {
-
-            alert("語音功能正在準備中！");
-
-        }
+    <div class="card">
 
 
-        function showHistory() {
+        <button
+            id="recordButton"
+            class="main-button"
+            onclick="toggleRecording()"
+        >
+            🎙️ 開始說話
+        </button>
 
-            alert("歷史紀錄功能正在準備中！");
 
-        }
+        <div
+            id="status"
+            class="status"
+        >
+            按下按鈕開始錄音
+        </div>
 
-    </script>
+
+        <div
+            id="timer"
+            class="timer"
+        ></div>
+
+
+        <div
+            id="audioBox"
+            class="audio-box"
+        >
+
+            <audio
+                id="audioPlayer"
+                controls
+            ></audio>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="card">
+
+        <button
+            class="history-button"
+            onclick="showHistory()"
+        >
+            📋 查看過去紀錄
+        </button>
+
+    </div>
+
+
+    <div class="info">
+
+        蓮香麵店進貨助手 v0.2
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+let mediaRecorder = null;
+
+let audioChunks = [];
+
+let audioUrl = null;
+
+let startTime = null;
+
+let timerInterval = null;
+
+
+
+async function toggleRecording() {
+
+
+    if (mediaRecorder && mediaRecorder.state === "recording") {
+
+        stopRecording();
+
+    } else {
+
+        await startRecording();
+
+    }
+
+}
+
+
+
+async function startRecording() {
+
+
+    try {
+
+
+        const stream =
+            await navigator.mediaDevices.getUserMedia({
+                audio: true
+            });
+
+
+        audioChunks = [];
+
+
+        mediaRecorder =
+            new MediaRecorder(stream);
+
+
+        mediaRecorder.ondataavailable =
+            function(event) {
+
+                if (event.data.size > 0) {
+
+                    audioChunks.push(event.data);
+
+                }
+
+            };
+
+
+        mediaRecorder.onstop =
+            function() {
+
+
+                const audioBlob =
+                    new Blob(
+                        audioChunks,
+                        {
+                            type: mediaRecorder.mimeType
+                        }
+                    );
+
+
+                if (audioUrl) {
+
+                    URL.revokeObjectURL(audioUrl);
+
+                }
+
+
+                audioUrl =
+                    URL.createObjectURL(audioBlob);
+
+
+                const audioPlayer =
+                    document.getElementById(
+                        "audioPlayer"
+                    );
+
+
+                audioPlayer.src =
+                    audioUrl;
+
+
+                document
+                    .getElementById("audioBox")
+                    .classList.add("show");
+
+
+                document
+                    .getElementById("status")
+                    .textContent =
+                    "錄音完成，可以播放剛才的錄音";
+
+
+                stream
+                    .getTracks()
+                    .forEach(
+                        track => track.stop()
+                    );
+
+            };
+
+
+        mediaRecorder.start();
+
+
+        startTime = Date.now();
+
+
+        timerInterval =
+            setInterval(updateTimer, 1000);
+
+
+        document
+            .getElementById("recordButton")
+            .textContent =
+            "⏹️ 停止錄音";
+
+
+        document
+            .getElementById("recordButton")
+            .classList.add("recording");
+
+
+        document
+            .getElementById("status")
+            .textContent =
+            "正在錄音，請開始說話";
+
+
+    }
+
+    catch (error) {
+
+
+        console.error(error);
+
+
+        document
+            .getElementById("status")
+            .textContent =
+            "無法使用麥克風，請確認 Safari 已允許麥克風權限";
+
+
+    }
+
+}
+
+
+
+function stopRecording() {
+
+
+    if (
+        mediaRecorder &&
+        mediaRecorder.state === "recording"
+    ) {
+
+        mediaRecorder.stop();
+
+    }
+
+
+    clearInterval(timerInterval);
+
+
+    document
+        .getElementById("timer")
+        .textContent = "";
+
+
+    document
+        .getElementById("recordButton")
+        .textContent =
+        "🎙️ 再錄一次";
+
+
+    document
+        .getElementById("recordButton")
+        .classList.remove("recording");
+
+}
+
+
+
+function updateTimer() {
+
+
+    const seconds =
+        Math.floor(
+            (Date.now() - startTime) / 1000
+        );
+
+
+    const minutes =
+        Math.floor(seconds / 60);
+
+
+    const remainingSeconds =
+        seconds % 60;
+
+
+    document
+        .getElementById("timer")
+        .textContent =
+        String(minutes).padStart(2, "0")
+        + ":"
+        + String(remainingSeconds).padStart(2, "0");
+
+}
+
+
+
+function showHistory() {
+
+
+    alert(
+        "歷史紀錄功能下一階段製作。"
+    );
+
+}
+
+
+</script>
+
 
 </body>
+
 </html>
